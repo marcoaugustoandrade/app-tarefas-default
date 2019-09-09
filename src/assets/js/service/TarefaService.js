@@ -9,28 +9,28 @@ class TarefaService extends Service{
     return fetch(`${this._path}`).then(res =>res.json())
   }
 
-  async listarPorDescricao(descricao){
-    return fetch(`${this._path}?f=${descricao}`).then(res =>res.json())
-  }
+  // async listarPorDescricao(descricao){
+  //   return fetch(`${this._path}?f=${descricao}`).then(res =>res.json())
+  // }
 
-  async listarPorId(id) {
-    return fetch(`${this._path}/${id}`).then(res => res.json())
-  }
+  // async listarPorId(id) {
+  //   return fetch(`${this._path}/${id}`).then(res => res.json())
+  // }
 
-  async inserir(tarefa){
-    return fetch(`${this._path}`, {
-      method: 'POST',
-      body: tarefa
-    }).then(res => res.json()).then(res => console.log(res))
-  }
+  // async inserir(tarefa){
+  //   return fetch(`${this._path}`, {
+  //     method: 'POST',
+  //     body: tarefa
+  //   }).then(res => res.json()).then(res => console.log(res))
+  // }
 
-  async alterar(tarefa){
+  // async alterar(tarefa){
 
-  }
+  // }
 
-  async deletar(tarefa){
+  // async deletar(tarefa){
 
-  }
+  // }
 }
 
 // async function listarPorId() {

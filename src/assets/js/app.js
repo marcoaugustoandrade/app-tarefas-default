@@ -1,2 +1,2 @@
 let tarefaController = new TarefaController()
-tarefaController.listarTodas()
+let categoriaController = new CategoriaController()

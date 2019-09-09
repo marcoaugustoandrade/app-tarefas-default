@@ -7,20 +7,20 @@ class TarefaController{
   }
 
   listarTodas(){
-    this._tarefaService.listarTodas().then(tarefas => {
-      tarefas.forEach(tarefa => {
-        this._tarefas.add(tarefa)
-      })
-      // console.log(this._tarefas)
-      // this._tarefaView.montar(tarefas)
-    }).then(() => this._tarefaView.montarGrid(this._tarefas))
+    this._tarefas.clear()
+    this._tarefaService.listarTodas()
+      .then(tarefas => {
+        tarefas.forEach(tarefa => {
+          this._tarefas.add(tarefa)
+        })})
+      .then(() => this._tarefaView.montarGrid(this._tarefas))
   }
 
-  listarPorDescricao(){
+  // listarPorDescricao(){
 
-  }
+  // }
 
-  listarPorId(id){
+  // listarPorId(id){
     
 
     // document.querySelector('#btn-novo').addEventListener('click', (event) => {
@@ -28,24 +28,24 @@ class TarefaController{
       // const tarefaService = new TarefaService()
       // this._tarefaService.listarPorId(id).then(data => console.log(data.descricao))
     // })
-  }
+  // }
 
-  inserir(){
-    const descricao = "Comprar tinta"
-    const datahorario = "2010-10-10 14:00:00"
-    const realizado = false
-    const categoria_id = 3
-    const tarefa = new Tarefa(0, descricao, datahorario, realizado, categoria_id)
-    this._tarefaService.inserir(tarefa)
-  }
+  // inserir(){
+  //   const descricao = "Comprar tinta"
+  //   const datahorario = "2010-10-10 14:00:00"
+  //   const realizado = false
+  //   const categoria_id = 3
+  //   const tarefa = new Tarefa(0, descricao, datahorario, realizado, categoria_id)
+  //   this._tarefaService.inserir(tarefa)
+  // }
 
-  alterar(){
+  // alterar(){
 
-  }
+  // }
 
-  deletar(){
+  // deletar(){
 
-  }
+  // }
 
 }
 

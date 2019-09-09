@@ -12,4 +12,8 @@ class Tarefas{
   list(){
     return this._tarefas
   }
+
+  clear(){
+    this._tarefas = []
+  }
 }
