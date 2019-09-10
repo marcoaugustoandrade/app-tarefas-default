@@ -1,16 +1,21 @@
 class Mensagem{
-  
-  static mostrarMensagem(msg, classe){
+
+  constructor(){
     
-    const mensagem = document.querySelector("#mensagem")
-    mensagem.innerHTML = msg
-    mensagem.className = ''
-    mensagem.classList.add('m-3', 'alert', classe)
+    this._mensagem = ''
+  }
+  
+  static mostrar(msg, classe){
+    
+    this._mensagem = document.querySelector("#mensagem")
+    this._mensagem.innerHTML = msg
+    this._mensagem.className = ''
+    this._mensagem.classList.add('m-3', 'alert', classe)
     
     setTimeout(() => {
-      mensagem.innerHTML = ''
-      mensagem.className = ''
-      mensagem.classList.add('d-none')
+      this._mensagem.innerHTML = ''
+      this._mensagem.className = ''
+      this._mensagem.classList.add('d-none')
     }, 3000)
   }
 }

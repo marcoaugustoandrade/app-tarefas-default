@@ -51,7 +51,7 @@
           <div class="form-group">
             <input type="text" class="form-control mr-2" placeholder="Buscar" style="background-color: #4E90E9; color: #FFF">
           </div>
-          <button class="btn btn-success mr-3" id="btn-novo" data-toggle="modal" data-target="#modal">
+          <button class="btn btn-success mr-3" id="btn-novo" onclick="tarefaController.carregarFormulario(this)">
             <img src="assets/images/add-white.svg" alt="Nova tarefa"> Nova</button>
         </form>
       </div>
@@ -67,18 +67,26 @@
           <a href="#"><img src="assets/images/add-black.svg" alt="Nova categoria"></a>
         </span>
       </div>
-      <ul class="list-unstyled mt-3">
+      <ul class="list-unstyled mt-3" id="lista-categorias">
         <li>
-          <a href="#" class="link-category"><img src="assets/images/yellow.svg" alt="" class="mr-1"> Escola</a>
+          <a href="#" class="link-category">
+            <img src="assets/images/yellow.svg" alt="" class="mr-1"> Escola
+          </a>
         </li>
         <li>
-          <a href="#" class="link-category"><img src="assets/images/green.svg" alt="" class="mr-1"> Trabalho de conclusão</a>
+          <a href="#" class="link-category">
+            <img src="assets/images/green.svg" alt="" class="mr-1"> Trabalho de conclusão
+          </a>
         </li>
         <li>
-          <a href="#" class="link-category"><img src="assets/images/blue.svg" alt="" class="mr-1"> Trabalho</a>
+          <a href="#" class="link-category">
+            <img src="assets/images/blue.svg" alt="" class="mr-1"> Trabalho
+          </a>
         </li>
         <li>
-          <a href="#" class="link-category"><img src="assets/images/red.svg" alt="" class="mr-1"> Pessoal</a>
+          <a href="#" class="link-category">
+            <img src="assets/images/red.svg" alt="" class="mr-1"> Pessoal
+          </a>
         </li>
       </ul>
     </nav>
@@ -165,8 +173,8 @@
     
     </section>
 
-    <div class="modal" tabindex="-1" role="dialog" id="modal">
-      <div class="modal-dialog" role="document">
+    <div class="modal" id="modal">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Inserir nova tarefa</h5>
@@ -178,11 +186,11 @@
             <form class="form">
               <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <input type="text" id="descricao" class="form-control">
+                <input type="text" id="descricao" class="form-control" value="Fazer algo">
               </div>
               <div class="form-group">
                 <label for="data">Data:</label>
-                <input type="date" id="data" class="form-control">
+                <input type="date" id="data" class="form-control" value="2019-10-10">
               </div>
               <div class="form-group">
                 <label for="categoria">Categoria:</label>
@@ -197,7 +205,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="button" class="btn btn-primary" id="btn-salvar" onclick="tarefaController.inserir()">Salvar</button>
           </div>
         </div>
       </div>
@@ -206,26 +214,22 @@
 
   <!-- Importações -->
   <script src="assets/js/util/Mensagens.js"></script>
-  <script src="assets/js/model/Tarefa.js"></script>
-  <script src="assets/js/model/Tarefas.js"></script>
-  <script src="assets/js/model/Categoria.js"></script>
-  <script src="assets/js/model/Categorias.js"></script>
-  <script src="assets/js/service/Service.js"></script>
-  <script src="assets/js/service/TarefaService.js"></script>
-  <script src="assets/js/service/CategoriaService.js"></script>
-  <script src="assets/js/view/TarefaView.js"></script>
-  <script src="assets/js/controller/TarefaController.js"></script>
-  <script src="assets/js/controller/CategoriaController.js"></script>
+  <script src="assets/js/models/Tarefa.js"></script>
+  <script src="assets/js/models/Tarefas.js"></script>
+  <script src="assets/js/models/Categoria.js"></script>
+  <script src="assets/js/models/Categorias.js"></script>
+  <script src="assets/js/services/Service.js"></script>
+  <script src="assets/js/services/TarefaService.js"></script>
+  <script src="assets/js/services/CategoriaService.js"></script>
+  <script src="assets/js/views/CategoriaView.js"></script>
+  <script src="assets/js/views/TarefaView.js"></script>
+  <script src="assets/js/controllers/TarefaController.js"></script>
+  <script src="assets/js/controllers/CategoriaController.js"></script>
   <script src="assets/js/app.js"></script>
 
   <!-- Importações do Bootstrap -->
   <script src="assets/js/bootstrap/jquery-3.3.1.slim.min.js"></script>
   <script src="assets/js/bootstrap/popper.min.js"></script>
   <script src="assets/js/bootstrap/bootstrap.min.js"></script>
-  <script>
-    $('#modal').on('shown.bs.modal', function () {
-      $('#btn-novo').trigger('focus')
-    })
-  </script>
 </body>
 </html>

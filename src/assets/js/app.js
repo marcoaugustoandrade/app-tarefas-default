@@ -1,2 +1,7 @@
-let tarefaController = new TarefaController()
-let categoriaController = new CategoriaController()
+const categoriaController = new CategoriaController()
+categoriaController.montar()
+
+const tarefaController = new TarefaController()
+tarefaController.listar("")
+
+

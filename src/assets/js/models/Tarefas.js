@@ -1,19 +1,18 @@
-class Tarefas{
-
+class Tarefas {
+  
   constructor(){
-
     this._tarefas = []
   }
 
-  add(tarefa){
+  adicionar(tarefa){
     this._tarefas.push(tarefa)
   }
 
-  list(){
+  listar(){
     return this._tarefas
   }
 
-  clear(){
+  limpar(){
     this._tarefas = []
   }
 }
